@@ -5,99 +5,296 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rental Agreement Generator - Bangalore</title>
     <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --background: #f8fafc;
+            --text: #0f172a;
+            --text-secondary: #475569;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background: linear-gradient(to right, #f8f9fa, #e9ecef);
-            color: #212529;
+            background: var(--background);
+            color: var(--text);
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(var(--primary), 0.1) 0, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(var(--primary-dark), 0.1) 0, transparent 50%);
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 2rem;
         }
+
         .header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 4rem;
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #4f46e508 0%, #4338ca08 100%);
+            border-radius: 2rem;
+            position: relative;
+            overflow: hidden;
         }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234f46e5' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
         .header h1 {
-            font-size: 2.5em;
-            color: #1a365d;
-            margin-bottom: 10px;
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
+
         .header p {
-            font-size: 1.2em;
-            color: #4a5568;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
         }
+
         .cta-button {
             display: inline-block;
-            background: #3182ce;
+            background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
             color: white;
-            padding: 15px 30px;
-            border-radius: 8px;
+            padding: 1.25rem 2.5rem;
+            border-radius: 1rem;
             text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s ease;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2), 0 2px 4px -1px rgba(79, 70, 229, 0.1);
         }
+
         .cta-button:hover {
-            background: #2c5282;
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.2), 0 10px 10px -5px rgba(79, 70, 229, 0.1);
         }
+
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
+            gap: 2rem;
+            margin: 4rem 0;
         }
+
         .feature-card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(79, 70, 229, 0.1);
         }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: rgba(79, 70, 229, 0.3);
+        }
+
         .feature-card h3 {
-            color: #2d3748;
-            margin-top: 0;
+            color: var(--text);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
+
+        .feature-card h3 svg {
+            width: 28px;
+            height: 28px;
+            color: #4f46e5;
+        }
+
         .feature-card ul {
             list-style-type: none;
             padding: 0;
         }
+
         .feature-card li {
-            margin: 10px 0;
-            padding-left: 25px;
+            margin: 1rem 0;
+            padding-left: 1.75rem;
             position: relative;
+            color: var(--text-secondary);
         }
+
         .feature-card li::before {
-            content: "✓";
-            color: #38a169;
+            content: "→";
+            color: #4f46e5;
             position: absolute;
             left: 0;
+            font-weight: bold;
+        }
+
+        .benefits {
+            background: linear-gradient(135deg, #4f46e508 0%, #4338ca08 100%);
+            padding: 5rem 2rem;
+            border-radius: 2rem;
+            margin: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefits::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234f46e5' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .benefits-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefits h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text);
+            background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .benefit-item {
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(79, 70, 229, 0.1);
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-3px);
+            border-color: rgba(79, 70, 229, 0.3);
+        }
+
+        .benefit-item h3 {
+            color: #4f46e5;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 4rem 0;
+            color: var(--text-secondary);
+            background: linear-gradient(135deg, #4f46e508 0%, #4338ca08 100%);
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header {
+                padding: 3rem 1rem;
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header p {
+                font-size: 1.25rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits {
+                padding: 3rem 1rem;
+            }
+
+            .benefits h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header class="header">
-            <h1>Rental Agreement Generator</h1>
-            <p>Create legally compliant rental agreements for properties in Bangalore</p>
-            <a href="https://tally.so/r/w5qWLE" class="cta-button" target="_blank">Create New Agreement</a>
+            <div class="header-content">
+                <h1>Rental Agreement Generator</h1>
+                <p>Create legally compliant rental agreements for properties in Bangalore in minutes</p>
+                <a href="https://tally.so/r/w5qWLE" class="cta-button" target="_blank" rel="noopener noreferrer">
+                    Create New Agreement
+                </a>
+            </div>
         </header>
 
         <div class="features">
             <div class="feature-card">
-                <h3>How It Works</h3>
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                    </svg>
+                    How It Works
+                </h3>
                 <ul>
                     <li>Click the "Create New Agreement" button</li>
-                    <li>Add your information</li>
-                    <li>Our team will reach out to you for draft</li>
+                    <li>Fill in your property details</li>
+                    <li>Add tenant information</li>
                     <li>Receive your agreement via email</li>
                 </ul>
             </div>
 
             <div class="feature-card">
-                <h3>Features</h3>
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    Features
+                </h3>
                 <ul>
                     <li>Bangalore-specific templates</li>
                     <li>Legal compliance checks</li>
@@ -107,7 +304,12 @@
             </div>
 
             <div class="feature-card">
-                <h3>Benefits</h3>
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                    Benefits
+                </h3>
                 <ul>
                     <li>Save time and effort</li>
                     <li>Ensure legal compliance</li>
@@ -116,6 +318,30 @@
                 </ul>
             </div>
         </div>
+
+        <section class="benefits">
+            <div class="benefits-content">
+                <h2>Why Choose Our Service?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <h3>Quick & Easy</h3>
+                        <p>Generate your rental agreement in less than 5 minutes</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>Legal Compliance</h3>
+                        <p>All agreements are compliant with Bangalore rental laws</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>Secure & Private</h3>
+                        <p>Your data is handled with utmost security and privacy</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2025 Rental Agreement Generator. All rights reserved.</p>
+        </footer>
     </div>
 </body>
 </html>
