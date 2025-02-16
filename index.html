@@ -6,16 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="Rental Agreement Generator - Bangalore">
     <meta name="description" content="Create legally compliant rental agreements for properties in Bangalore instantly. Generate, review, and download your rental agreement in minutes.">
-    <meta name="keywords" content="rental agreement, Bangalore, lease, property, legal document, online rental agreement">
+    <meta name="keywords" content="rental agreement, Bangalore, lease, property rental, legal document, tenancy agreement">
     <meta name="author" content="Your Company Name">
     <meta name="robots" content="index, follow">
-
-    <!-- Open Graph (Facebook, LinkedIn) -->
-    <meta property="og:title" content="Rental Agreement Generator - Bangalore">
-    <meta property="og:description" content="Easily generate legally compliant rental agreements for Bangalore properties online.">
-    <meta property="og:image" content="https://example.com/preview-image.jpg">
-    <meta property="og:url" content="https://example.com/rental-agreement-bangalore">
-    <meta property="og:type" content="website">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://example.com/rental-agreement-bangalore">
@@ -27,17 +20,17 @@
     <title>Rental Agreement Generator - Bangalore | Quick & Legal</title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <style>
         :root {
-            --primary: #4f46e5;
-            --primary-dark: #4338ca;
-            --background: #f8fafc;
-            --text: #0f172a;
-            --text-secondary: #64748b;
-            --card-bg: #ffffff;
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --background: #f3f4f6;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --card-bg: rgba(255, 255, 255, 0.6);
             --shadow: rgba(0, 0, 0, 0.1);
         }
 
@@ -48,7 +41,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background: var(--background);
             color: var(--text);
             line-height: 1.6;
@@ -61,96 +54,90 @@
         }
 
         .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            padding: 4rem 1rem;
+            padding: 5rem 1rem;
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
-            border-radius: 10px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px var(--shadow);
         }
 
         .header h1 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 600;
         }
 
         .header p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             opacity: 0.9;
+            max-width: 600px;
+            margin-top: 10px;
         }
 
         .cta-button {
             background: white;
             color: var(--primary);
-            padding: 14px 30px;
-            font-size: 1.1rem;
+            padding: 14px 35px;
+            font-size: 1.2rem;
             font-weight: 600;
             text-decoration: none;
             border-radius: 50px;
-            display: inline-block;
             margin-top: 20px;
             transition: all 0.3s ease-in-out;
-            box-shadow: 0 4px 10px var(--shadow);
+            box-shadow: 0 5px 15px var(--shadow);
         }
 
         .cta-button:hover {
             background: var(--primary-dark);
             color: white;
-            transform: scale(1.05);
+            transform: translateY(-3px);
         }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
+        .content-section {
+            margin: 5rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
         }
 
-        .feature-card {
+        .card {
             background: var(--card-bg);
+            backdrop-filter: blur(10px);
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 6px 12px var(--shadow);
-            transition: all 0.3s ease-in-out;
+            max-width: 800px;
+            box-shadow: 0 8px 20px var(--shadow);
+            margin-bottom: 2rem;
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px var(--shadow);
-        }
-
-        .feature-card h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        .content-section h2 {
+            font-size: 2rem;
             color: var(--primary);
+            margin-bottom: 1.5rem;
         }
 
-        .feature-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .feature-card ul li {
-            margin: 8px 0;
+        .content-section p {
             font-size: 1.1rem;
-            color: var(--text-secondary);
+            color: var(--text-light);
+            text-align: justify;
+            line-height: 1.8;
         }
 
         .footer {
             text-align: center;
             padding: 2rem;
-            background: var(--background);
-            color: var(--text-secondary);
+            font-size: 1rem;
+            color: var(--text-light);
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .header h1 {
-                font-size: 2.2rem;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
+                font-size: 2.5rem;
             }
         }
     </style>
@@ -159,45 +146,47 @@
 
     <!-- Header -->
     <header class="header">
-        <div class="container">
-            <h1>Rental Agreement Generator</h1>
-            <p>Legally compliant rental agreements for Bangalore properties in minutes.</p>
-            <a href="https://tally.so/r/w5qWLE" class="cta-button" target="_blank" rel="noopener noreferrer">
-                Create New Agreement
-            </a>
-        </div>
+        <h1>Rental Agreement Generator</h1>
+        <p>Create legally compliant rental agreements for Bangalore properties instantly.</p>
+        <a href="https://tally.so/r/w5qWLE" class="cta-button" target="_blank" rel="noopener noreferrer">
+            Create New Agreement
+        </a>
     </header>
 
-    <!-- Features Section -->
-    <section class="container">
-        <div class="features">
-            <div class="feature-card">
-                <h2>How It Works</h2>
-                <ul>
-                    <li>Click "Create New Agreement"</li>
-                    <li>Fill in your property details</li>
-                    <li>Our team will reach out to you for draft</li>
-                    <li>Receive your agreement instantly</li>
-                </ul>
-            </div>
+    <!-- Content Section -->
+    <section class="container content-section">
+        <div class="card">
+            <h2>Why Choose Our Rental Agreement Service?</h2>
+            <p>Creating a rental agreement is a crucial step in securing a legally binding contract between landlords and tenants. Our online rental agreement generator ensures that all agreements comply with Bangalore’s property laws, saving you time and effort.</p>
+        </div>
 
-            <div class="feature-card">
-                <h2>Features</h2>
-                <ul>
-                    <li>Bangalore-specific templates</li>
-                    <li>Legal compliance checks</li>
-                    <li>Instant email delivery</li>
-                </ul>
-            </div>
+        <div class="card">
+            <h2>Key Features</h2>
+            <p>✔ Instant rental agreement generation  
+            <p>✔ Fully compliant with Bangalore's rental laws  </p>
+            <p>✔ Easy online submission and PDF download  </p>
+            <p>✔ Protects both landlords and tenants with legally valid terms  </p>
+            <p>✔ Hassle-free, automated process to generate agreements in minutes  </p>
+            </p>
+        </div>
 
-            <div class="feature-card">
-                <h2>Benefits</h2>
-                <ul>
-                    <li>Save time & effort</li>
-                    <li>Ensure legal compliance</li>
-                    <li>Secure document handling</li>
-                </ul>
-            </div>
+        <div class="card">
+            <h2>How It Works</h2>
+            <p>1️⃣ Click the "Create New Agreement" button
+            <p>2️⃣ Enter the required details about your rental property, landlord, and tenant. </p>
+            <p>3️⃣ Our team will reach out to you and share the draft.</p>
+            <p>4️⃣ Download the final agreement instantly and get it legally notarized.</p>
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Legal Compliance & Security</h2>
+            <p>All our agreements follow the latest rental laws in Bangalore, ensuring legal protection for both landlords and tenants. Your data is encrypted and stored securely, maintaining complete confidentiality.</p>
+        </div>
+
+        <div class="card">
+            <h2>Get Started Today!</h2>
+            <p>Why wait? Secure your rental agreement today and avoid legal complications. Our quick and easy process ensures a hassle-free experience.</p>
         </div>
     </section>
 
