@@ -17,12 +17,6 @@
     <meta property="og:url" content="https://example.com/rental-agreement-bangalore">
     <meta property="og:type" content="website">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Rental Agreement Generator - Bangalore">
-    <meta name="twitter:description" content="Quick and easy online rental agreement generator for Bangalore properties.">
-    <meta name="twitter:image" content="https://example.com/preview-image.jpg">
-
     <!-- Canonical URL -->
     <link rel="canonical" href="https://example.com/rental-agreement-bangalore">
 
@@ -32,24 +26,8 @@
     <!-- Title -->
     <title>Rental Agreement Generator - Bangalore | Quick & Legal</title>
 
-    <!-- Structured Data (Schema.org) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Rental Agreement Generator - Bangalore",
-        "description": "Create legally compliant rental agreements for properties in Bangalore instantly. Generate, review, and download your rental agreement in minutes.",
-        "url": "https://example.com/rental-agreement-bangalore",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Your Company Name",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://example.com/logo.png"
-            }
-        }
-    }
-    </script>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <style>
@@ -58,69 +36,104 @@
             --primary-dark: #4338ca;
             --background: #f8fafc;
             --text: #0f172a;
-            --text-secondary: #475569;
+            --text-secondary: #64748b;
             --card-bg: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             background: var(--background);
             color: var(--text);
-            margin: 0;
-            padding: 0;
             line-height: 1.6;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: auto;
             padding: 2rem;
         }
 
         .header {
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 4rem 1rem;
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
             border-radius: 10px;
         }
 
         .header h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
+            font-weight: 600;
         }
 
         .header p {
             font-size: 1.2rem;
+            opacity: 0.9;
         }
 
         .cta-button {
-            background: var(--primary);
-            color: white;
-            padding: 12px 24px;
+            background: white;
+            color: var(--primary);
+            padding: 14px 30px;
             font-size: 1.1rem;
+            font-weight: 600;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 50px;
             display: inline-block;
-            margin-top: 15px;
-            transition: 0.3s;
+            margin-top: 20px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 10px var(--shadow);
         }
 
         .cta-button:hover {
             background: var(--primary-dark);
+            color: white;
+            transform: scale(1.05);
         }
 
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
             margin: 4rem 0;
+            text-align: center;
         }
 
         .feature-card {
             background: var(--card-bg);
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 6px 12px var(--shadow);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px var(--shadow);
+        }
+
+        .feature-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .feature-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-card ul li {
+            margin: 8px 0;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
         }
 
         .footer {
@@ -128,6 +141,17 @@
             padding: 2rem;
             background: var(--background);
             color: var(--text-secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -151,9 +175,9 @@
                 <h2>How It Works</h2>
                 <ul>
                     <li>Click "Create New Agreement"</li>
-                    <li>Fill in your details</li>
-                    <li>Our team will reach out for draft</li>
-                    <li>Receive your final agreement instantly</li>
+                    <li>Fill in your property details</li>
+                    <li>Our team will reach out to you for draft</li>
+                    <li>Receive your agreement instantly</li>
                 </ul>
             </div>
 
